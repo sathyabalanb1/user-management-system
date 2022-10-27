@@ -52,12 +52,6 @@ class ApiController extends Controller
     public function detail()
     {
         $user = Auth::user();
-        /*$data = [
-            'name' => $user->name,
-            'email' => $user->email,
-        ];*/
-        //$response['user'] = $data;
-        //return response()->json($data, 200);
         return new UserResource($user);
     }
     public function logout()
@@ -72,12 +66,6 @@ class ApiController extends Controller
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->save();
-        /*$data = [
-            'name' => $user->name,
-            'email' => $user->email,
-        ];
-
-        return response()->json($data);*/
         return new UserResource($user);
     }
     public function DeleteProfile()
